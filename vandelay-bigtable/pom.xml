@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <artifactId>vandelay-bigtable</artifactId>
+
+  <parent>
+    <artifactId>api.vandelay</artifactId>
+    <groupId>com.spotify</groupId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Spotify AB</name>
+    <url>http://www.spotify.com</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>aabramov-pc</id>
+      <name>Alexander Abramov</name>
+      <email>aabramov@spotify.com</email>
+      <organization>Spotify AB</organization>
+      <organizationUrl>http://www.spotify.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <slf4j.version>1.7.36</slf4j.version>
+    <bigtable.api.version>2.6.2</bigtable.api.version>
+    <mockito.version>4.5.1</mockito.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.spotify</groupId>
+      <artifactId>vandelay-core</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.spotify</groupId>
+      <artifactId>vandelay-serialization-core</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable</artifactId>
+      <version>${bigtable.api.version}</version>
+    </dependency>
+
+    <!-- Test scope -->
+    <dependency>
+      <groupId>com.spotify</groupId>
+      <artifactId>vandelay-serialization-jackson</artifactId>
+      <version>${project.parent.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-inline</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
